@@ -8,10 +8,11 @@
 // console.log(subtract(100, 81));
 
 
-import isSenior, { isAdult, canDrink } from './person.js';
+import whyIsThisChickenNotisSenior, { isAdult, canDrink } from './person.js';
+
 console.log(isAdult(18));
 console.log(canDrink(18));
-console.log(isSenior(65));
+console.log(whyIsThisChickenNotisSenior(65));
 
 // Setting the default export and function
 // Grab the default and call it.
