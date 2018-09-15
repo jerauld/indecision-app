@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jerauld/indecision-app.git"
+    "url": "git+https://github.com/julienshim/indecision-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jerauld/indecision-app/issues"
+    "url": "https://github.com/julienshim/indecision-app/issues"
   },
-  "homepage": "https://github.com/jerauld/indecision-app#readme",
+  "homepage": "https://github.com/julienshim/indecision-app#readme",
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
