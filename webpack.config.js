@@ -1,13 +1,12 @@
-// entry -> output
 const path = require('path');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './src/app.js', // entry -> output
     output: {
         path: path.join(__dirname, 'public'),
         filename: 'bundle.js'
     },
-    module: {
+    module: { //loader
         rules: [{
             loader: 'babel-loader',
             test: /\.js$/,
@@ -15,6 +14,4 @@ module.exports = {
         }]
     }
 };
-
-// loader
 
