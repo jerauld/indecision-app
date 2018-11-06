@@ -22234,6 +22234,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 var AddOption =
@@ -22241,26 +22243,30 @@ var AddOption =
 function (_React$Component) {
   _inherits(AddOption, _React$Component);
 
-  function AddOption(props) {
+  function AddOption() {
+    var _getPrototypeOf2;
+
     var _this;
 
     _classCallCheck(this, AddOption);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(AddOption).call(this, props));
-    _this.handleAddOption = _this.handleAddOption.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.state = {
-      error: undefined
-    };
-    return _this;
-  }
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-  _createClass(AddOption, [{
-    key: "handleAddOption",
-    value: function handleAddOption(event) {
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(AddOption)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      error: undefined
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleAddOption", function (event) {
       event.preventDefault();
       var option = event.target.elements.option.value.trim();
-      var error = this.props.handleAddOption(option);
-      this.setState(function () {
+
+      var error = _this.props.handleAddOption(option);
+
+      _this.setState(function () {
         return {
           error: error
         };
@@ -22269,8 +22275,12 @@ function (_React$Component) {
       if (!error) {
         event.target.elements.option.value = '';
       }
-    }
-  }, {
+    });
+
+    return _this;
+  }
+
+  _createClass(AddOption, [{
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.error && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.error), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -22347,6 +22357,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -22358,19 +22370,61 @@ var IndecisionApp =
 function (_React$Component) {
   _inherits(IndecisionApp, _React$Component);
 
-  function IndecisionApp(props) {
+  function IndecisionApp() {
+    var _getPrototypeOf2;
+
     var _this;
 
     _classCallCheck(this, IndecisionApp);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(IndecisionApp).call(this, props));
-    _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handlePick = _this.handlePick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleAddOption = _this.handleAddOption.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleDeleteOption = _this.handleDeleteOption.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.state = {
-      options: props.options
-    };
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(IndecisionApp)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      options: _this.props.options
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleAddOption", function (option) {
+      if (!option) {
+        return 'Enter a valid value to add item';
+      } else if (_this.state.options.indexOf(option) > -1) {
+        return 'This option already exists';
+      }
+
+      _this.setState(function (prevState) {
+        return {
+          options: prevState.options.concat(option)
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleDeleteOption", function (optionToRemove) {
+      _this.setState(function (prevState) {
+        return {
+          options: prevState.options.filter(function (option) {
+            return optionToRemove !== option;
+          })
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleDeleteOptions", function () {
+      _this.setState(function () {
+        return {
+          options: []
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handlePick", function () {
+      var randomNum = Math.floor(Math.random() * _this.state.options.length);
+      var option = _this.state.options[randomNum];
+      alert(option);
+    });
+
     return _this;
   }
 
@@ -22403,48 +22457,6 @@ function (_React$Component) {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       console.log('componentWillUnmount!');
-    }
-  }, {
-    key: "handleDeleteOptions",
-    value: function handleDeleteOptions() {
-      this.setState(function () {
-        return {
-          options: []
-        };
-      });
-    }
-  }, {
-    key: "handleDeleteOption",
-    value: function handleDeleteOption(optionToRemove) {
-      this.setState(function (prevState) {
-        return {
-          options: prevState.options.filter(function (option) {
-            return optionToRemove !== option;
-          })
-        };
-      });
-    }
-  }, {
-    key: "handlePick",
-    value: function handlePick() {
-      var randomNum = Math.floor(Math.random() * this.state.options.length);
-      var option = this.state.options[randomNum];
-      alert(option);
-    }
-  }, {
-    key: "handleAddOption",
-    value: function handleAddOption(option) {
-      if (!option) {
-        return 'Enter a valid value to add item';
-      } else if (this.state.options.indexOf(option) > -1) {
-        return 'This option already exists';
-      }
-
-      this.setState(function (prevState) {
-        return {
-          options: prevState.options.concat(option)
-        };
-      });
     }
   }, {
     key: "render",
