@@ -14,6 +14,9 @@ module.exports = {
             exclude: /node_modules/
         }]
     },
-    devtool: 'cheap-module-source-map' // vs cheap-module=-eval-source-map in webpack 3
+    devtool: 'cheap-module-source-map', // vs cheap-module=-eval-source-map in webpack
+    devServer: {
+        contentBase: path.join(__dirname, 'public')
+    }
 };
 
