@@ -22258,7 +22258,6 @@ function (_React$Component) {
     key: "handleAddOption",
     value: function handleAddOption(event) {
       event.preventDefault();
-      console.log(testting);
       var option = event.target.elements.option.value.trim();
       var error = this.props.handleAddOption(option);
       this.setState(function () {
