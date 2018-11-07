@@ -1,9 +1,11 @@
 .ReactModalPortal > div {
+    background: rgba(20, 22, 27, 0.75) !important; /*Because Dark Theme all the things*/
     opacity: 0;
 }
 
 .ReactModalPortal .ReactModal__Overlay {
     align-items: center;
+
     display: flex;
     justify-content: center;
     transition: opacity 200ms ease-in-out;
