@@ -2,9 +2,9 @@
 
 Indecision App was created for Andrew Mead's The Complete React Web Developer Course. It was built using SASS/CSS, React, Webpack, and compiled via Babel 7.
 
-## Status
+## Demo
 
-App completed but still in the development environment. Production status and deployment coming soon!
+App completed but still in the `development` environment. Production status and deployment coming soon!
 
 ## Installation
 
