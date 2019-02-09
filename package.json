@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/julienshim/indecision-app#readme",
   "dependencies": {
-    "css-loader": "^1.0.1",
+    "css-loader": "^2.1.0",
     "live-server": "^1.2.0",
     "node-sass": "^4.10.0",
     "normalize.css": "^8.0.0",
